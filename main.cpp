@@ -3,7 +3,7 @@
 int main()
 {
     char a;
-    List myList(1);
+    List<char> myList;
     myList.push_back('A');
     myList.push_back('B');
     myList.push_back('C');

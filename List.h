@@ -3,24 +3,24 @@
 
 using namespace std;
 
-
+struct Header
+{
+    char position;
+    size_t size;
+    intptr_t *next;
+};
+template <class var>
 class List
 {
-    struct Header
-    {
-        char position;
-        size_t size;
-        intptr_t *next;
-    };
-
     public:
-    List(size_t type);
-    void push_back(char item);
+    List();
+    void push_back(var item);
     void print();
+    var get(int position);
     size_t align(size_t n);
-    private:
 
-    char counter = 0;
+    private:
+    unsigned char index = 0;
     size_t bytes;
     intptr_t *firstAddress = NULL;
     intptr_t *lastAddress;
